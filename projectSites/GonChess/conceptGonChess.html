@@ -1,0 +1,158 @@
+<!-- NOTES!!!!
+	Max aspect ratio for pictures: 13:20 (e.g. 1300x2000)	for favor to height
+								   theoretically unlimited	for favor to width 
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">  
+		<title>Paul Sohns - Concept Gon-Chess</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/style.css">
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="title">
+				<a href="../../index.html"><h1>Paul Sohns - Portfolio</h1></a>
+			</div>
+			<div class="links">
+				<a href="../../contact.php"><h2>Contact</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../projectList.html"><h2>My work</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../aboutMe.html"><h2>About me</h2></a>
+			</div>
+		</div>
+
+		<div class="ProjectHeadline">
+			<h1><u>Concept - Gon-Chess</u></h1>
+		</div>
+
+		<!--NOTES!!!!
+			Max aspect ratio for pictures:	13:20 (e.g. 1300x2000)	in favor to height
+											theoretically unlimited	in favor to width 
+		-->
+		<div class="gallery">
+			<div class="slide">
+				<img src="img/GonChess01.png" class="shownIMG" onclick="showModal(1)">
+			</div>
+			<div class="slide">
+				<img src="img/GonChess02.png" class="shownIMG" onclick="showModal(2)">
+			</div>
+			<div class="slide">
+				<img src="img/GonChess03.png" class="shownIMG" onclick="showModal(3)">
+			</div>
+			<div class="slide">
+				<img src="img/GonChess04.png" class="shownIMG" onclick="showModal(4)">
+			</div>
+		</div>
+
+		<div class="thumbnails">
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+			<!--Fill column's from the center outwards--> 
+			<div class="row">
+				<div class="column">
+					<!--Filler column-->
+				</div>
+				<div class="column">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/GonChess01.png" onclick="currentSlide(1)" alt="The chessboard">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/GonChess02.png" onclick="currentSlide(2)" alt="Conceptual game setup">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/GonChess03.png" onclick="currentSlide(3)" alt="Gameboard areas">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/GonChess04.png" onclick="currentSlide(4)" alt="Movement concept">
+				</div>
+				<div class="column">
+				</div>
+			</div>
+		</div>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="ModalIMG">
+		</div>
+
+		<div class="ProjectText">
+			<p>	<u>About the concept:</u><br>
+				This "alternative chess game" is made to be played by 4 players simultaneously, either in a 2v2 or in a free-for-all.<br>
+				The board consists of octagonal tiles and four independent 'player areas' connected with each other via a central 'shared area'. 
+				Inside the different areas you have to respect different movement rules to properly go along with the altered shape of the board.<br>
+				The goal of Gon-Chess is the same as in the original version of chess: be the last player/team with a standing king.<br>
+				But compared with the original game, each type of chess figure obeys to diverging movement rules adapted to the 
+				irregularly shaped board and tiles.
+			</p>
+		</div>
+
+		<div class="footer">
+			<h3><br>Information</h3>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<h5>Paul Sohns<br>Germany, Lower Saxony<br>paul.sohns@web.de</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Hosted by: netcup.eu</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Feel free to contact me in case of<br>any questions, requests, etc.!</h5>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			//Manage the picture Slides
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("slide");
+				var dots = document.getElementsByClassName("demo");
+				var captionText = document.getElementById("caption");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "inline";
+				dots[slideIndex-1].className += " active";
+				captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+
+			//Show Pictures in Fullscreen when clicked
+			var modal = document.getElementById("myModal");
+			var img = document.getElementsByClassName("shownIMG");
+			var modalImg = document.getElementById("ModalIMG");
+			var span = document.getElementsByClassName("close")[0];
+
+			function showModal(n){
+				modal.style.display = "block";
+				modalImg.src = img[n-1].src;
+			}
+
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+		</script>
+	</body>
+</html>

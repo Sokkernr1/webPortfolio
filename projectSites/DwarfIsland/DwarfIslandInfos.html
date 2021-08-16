@@ -1,0 +1,156 @@
+<!-- NOTES!!!!
+	Max aspect ratio for pictures: 13:20 (e.g. 1300x2000)	for favor to height
+								   theoretically unlimited	for favor to width 
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">  
+		<title>Paul Sohns - Project Dwarf Island</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/style.css">
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="title">
+				<a href="../../index.html"><h1>Paul Sohns - Portfolio</h1></a>
+			</div>
+			<div class="links">
+				<a href="../../contact.php"><h2>Contact</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../projectList.html"><h2>My work</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../aboutMe.html"><h2>About me</h2></a>
+			</div>
+		</div>
+
+		<div class="ProjectHeadline">
+			<h1><u>Further information about "Dwarf Island"</u></h1>
+		</div>
+
+		<div class="ProjectText">
+			<div class="container">
+				<br><br>
+				<div class="row">
+					<div class="col-md-4">
+						<img src="img/Island Pics/Island00.png">
+					</div>
+					<div class="col-md-8">
+						<p>	In order to be able to construct a terrain mesh, the terrain generator needs a .png heightmap file, such as the one displayed here.
+							The script then reads the grayscale value of each pixel and stores the information in a 2D-array.<br>
+							This array is now the key component for the entire rest of the process.
+						</p>
+					</div>
+				</div>
+				<h1>&nbsp;&nbsp;&nbsp;&nbsp;&#10507;&nbsp;&nbsp;&nbsp;&nbsp;&#10507;&nbsp;&nbsp;&nbsp;&nbsp;&#10507;&nbsp;&nbsp;&nbsp;&nbsp;&#10507;</h1>
+				<div class="row">
+					<div class="col-md-4">
+						<img src="img/Island Pics/Island01.png">
+					</div>
+					<div class="col-md-8">
+						<p>	The array is then used in combination with the user-defined values from the Unity editor to shape the terrain 
+							in accordance with the heightmap image.
+						</p>
+					</div>
+				</div>
+				<h1>&nbsp;&nbsp;&nbsp;&nbsp;&#10507;&nbsp;&nbsp;&nbsp;&nbsp;&#10507;&nbsp;&nbsp;&nbsp;&nbsp;&#10507;&nbsp;&nbsp;&nbsp;&nbsp;&#10507;</h1>
+				<div class="row">
+					<div class="col-md-4">
+						<img src="img/Island Pics/Island02.png">
+					</div>
+					<div class="col-md-8">
+						<p>	The script then uses Perlin noise to procedurally form hills and valleys in the areas of the terrain 
+							in which the corresponding grayscale value falls in-between two user-defined values.<br>
+							Afterwards, the generator applies textures according to the surface position (by checking the grayscale array) and 
+							normal vector (in order to differentiate between ground and wall).<br>
+							These textures are subsequently commingled smoothly at their borders to create seamless transitions.
+						</p>
+					</div>
+				</div>
+				<h1>&nbsp;&nbsp;&nbsp;&nbsp;&#10507;&nbsp;&nbsp;&nbsp;&nbsp;&#10507;&nbsp;&nbsp;&nbsp;&nbsp;&#10507;&nbsp;&nbsp;&nbsp;&nbsp;&#10507;</h1>
+				<div class="row">
+					<div class="col-md-4">
+						<img src="img/Island Pics/Island03.png">
+					</div>
+					<div class="col-md-8">
+						<p>	Finally, the script generates trees/flowers/weeds using predefined values and options.<br>
+							Trees are randomly distributed over the island. An independent script then checks their surroundings to ensure that their position 
+							makes sense and that their mesh model fits to their environment.<br>
+							Flowers grow in batches/groups around the Island everywhere where there is a grass texture on the ground.<br>
+							Weeds, too, are placed here and there on those parts of the island with a grass texture surface.
+						</p>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="buttons">
+				<a href="projectDwarfIsland.html"><p>Back to the overview</p></a>
+				<a href="https://www.notion.so/67cf502bfa8040b3a265ff87d0be87f3?v=f6edea66d79848fc81ebd8d5f0fbf734"><p>Show project roadmap</p></a>
+				<a href="files/DwarfIslandProject.zip" download="files/DwarfIslandProject.zip" target="_blank"><p>Download entire project</p></a>
+			</div>
+		</div>
+
+		<div class="footer">
+			<h3><br>Information</h3>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<h5>Paul Sohns<br>Germany, Lower Saxony<br>paul.sohns@web.de</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Hosted by: netcup.eu</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Feel free to contact me in case of<br>any questions, requests, etc.!</h5>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			//Manage the picture Slides
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("slide");
+				var dots = document.getElementsByClassName("demo");
+				var captionText = document.getElementById("caption");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "inline";
+				dots[slideIndex-1].className += " active";
+				captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+
+			//Show Pictures in Fullscreen when clicked
+			var modal = document.getElementById("myModal");
+			var img = document.getElementsByClassName("shownIMG");
+			var modalImg = document.getElementById("ModalIMG");
+			var span = document.getElementsByClassName("close")[0];
+
+			function showModal(n){
+				modal.style.display = "block";
+				modalImg.src = img[n-1].src;
+			}
+
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+		</script>
+	</body>
+</html>

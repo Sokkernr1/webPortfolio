@@ -1,0 +1,182 @@
+<!-- NOTES!!!!
+	Max aspect ratio for pictures: 13:20 (e.g. 1300x2000)	for favor to height
+								   theoretically unlimited	for favor to width 
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">  
+		<title>Paul Sohns - Project Dwarf Island</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/style.css">
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="title">
+				<a href="../../index.html"><h1>Paul Sohns - Portfolio</h1></a>
+			</div>
+			<div class="links">
+				<a href="../../contact.php"><h2>Contact</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../projectList.html"><h2>My work</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../aboutMe.html"><h2>About me</h2></a>
+			</div>
+		</div>
+
+		<div class="ProjectHeadline">
+			<h1><u>Project-Dwarf Island</u></h1>
+		</div>
+
+		<!--NOTES!!!!
+			Max aspect ratio for pictures:	13:20 (e.g. 1300x2000)	in favor to height
+											theoretically unlimited	in favor to width 
+		-->
+		<div class="gallery">
+			<div class="slide">
+				<img src="img/Island01.png" class="shownIMG" onclick="showModal(1)">
+			</div>
+			<div class="slide">
+				<img src="img/Island02.png" class="shownIMG" onclick="showModal(2)">
+			</div>
+			<div class="slide">
+				<img src="img/Island03.png" class="shownIMG" onclick="showModal(3)">
+			</div>
+			<div class="slide">
+				<img src="img/Island04.png" class="shownIMG" onclick="showModal(4)">
+			</div>
+		</div>
+
+		<div class="thumbnails">
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+			<!--Fill column's from the center outwards--> 
+			<div class="row">
+				<div class="column">
+					<!--Filler column-->
+				</div>
+				<div class="column">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/Island01.png" onclick="currentSlide(1)" alt="A generated island">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/Island02.png" onclick="currentSlide(2)" alt="Generated flora">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/Island03.png" onclick="currentSlide(3)" alt="Generated beach">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/Island04.png" onclick="currentSlide(4)" alt="A player cutting down trees">
+				</div>
+				<div class="column">
+				</div>
+			</div>
+		</div>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="ModalIMG">
+		</div>
+
+		<div class="ProjectText">
+			<p>	<u>About the project:</u><br>
+				This is my main project and not yet finalized. I intend to continue working on it to improve the conceptional details.<br>
+				The game is about a dwarf (the player) who starts living on a new and unexplored island. 
+				The player decides by himself whatever he wants to do: exploring, gathering, constructing, mining or venturing into unknown ruins that lay below the island...<br>
+				This project is far from being finished and will experience many huge changes in the near future. 
+				It is currently in the pre-alpha state and missing a lot of features that will be implemented bit by bit subsequently.
+				<br><br>
+				<u>Features:</u><br>
+				<b>-|</b> Customizable PNG heightmap defining the shape of the island itself<br>
+				<b>-|</b> Procedural generation of hills/elevations<br>
+				<b>-|</b> Algorithm to colour the terrain mesh accordingly with predefined textures and blending them smoothly at their borders<br> 
+				<b>-|</b> Algorithm to "randomly, but logically" place trees, spawn Flowers in defined groups and create grassland along the entire island
+				<br><br>
+				<u>About the code:</u><br>
+				Everything in this project is programmed in C# within the Unity Engine.<br>
+				Since this project will change drastically in the near future, I will link the current state of the game code (24.11.2020).<br>
+				If you are interested in this project and want to know how the generator works at the moment, 
+				please do not hesitate to send me an e-mail asking about the newest files of the game!<br>
+				I will not go into the details of how the code works for the same reason... too many changes will be coming.<br>
+				Feel free to download the files, if interested! 
+
+				<br><br>
+				<u>Credits:</u><br>
+				The skydome assets: <a href="https://assetstore.unity.com/packages/3d/simple-sky-cartoon-assets-42373">"Simple Sky - Cartoon assets" by Synty Studios</a><br>
+				The foundation for the day/night cycle script: by <a href="https://www.youtube.com/channel/UC0Eu5xZXMmX5bn_v5zSB7kA/videos">"sam boyer 2nd"</a><br>
+				The inventory system: by <a href="https://www.youtube.com/channel/UC5fVJE8_ApAcT2ToGc63YRg">"Arcade Interactive"</a>
+				<br><br>
+			</p>
+			<div class="buttons">
+				<a href="files/DwarfIslandv0.1.zip" download="files/DwarfIslandv0.1.zip" target="_blank"><p>Download as standalone</p></a>
+				<a href="DwarfIslandInfos.html"><p>Show more information</p></a>
+			</div>
+		</div>
+
+		<div class="footer">
+			<h3><br>Information</h3>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<h5>Paul Sohns<br>Germany, Lower Saxony<br>paul.sohns@web.de</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Hosted by: netcup.eu</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Feel free to contact me in case of<br>any questions, requests, etc.!</h5>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			//Manage the picture Slides
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("slide");
+				var dots = document.getElementsByClassName("demo");
+				var captionText = document.getElementById("caption");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "inline";
+				dots[slideIndex-1].className += " active";
+				captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+
+			//Show Pictures in Fullscreen when clicked
+			var modal = document.getElementById("myModal");
+			var img = document.getElementsByClassName("shownIMG");
+			var modalImg = document.getElementById("ModalIMG");
+			var span = document.getElementsByClassName("close")[0];
+
+			function showModal(n){
+				modal.style.display = "block";
+				modalImg.src = img[n-1].src;
+			}
+
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+		</script>
+	</body>
+</html>

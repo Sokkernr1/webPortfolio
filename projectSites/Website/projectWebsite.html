@@ -1,0 +1,168 @@
+<!-- NOTES!!!!
+	Max aspect ratio for pictures: 13:20 (e.g. 1300x2000)	for favor to height
+								   theoretically unlimited	for favor to width 
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">  
+		<title>Paul Sohns - Project Website</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/style.css">
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="title">
+				<a href="../../index.html"><h1>Paul Sohns - Portfolio</h1></a>
+			</div>
+			<div class="links">
+				<a href="../../contact.php"><h2>Contact</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../projectList.html"><h2>My work</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../aboutMe.html"><h2>About me</h2></a>
+			</div>
+		</div>
+
+		<div class="ProjectHeadline">
+			<h1><u>Project-Website</u></h1>
+		</div>
+
+		<!--NOTES!!!!
+			Max aspect ratio for pictures:	13:20 (e.g. 1300x2000)	in favor to height
+											theoretically unlimited	in favor to width 
+		-->
+		<div class="gallery">
+			<div class="slide">
+				<img src="img/title.png" class="shownIMG" onclick="showModal(1)">
+			</div>
+			<div class="slide">
+				<img src="img/raspberry.png" class="shownIMG" onclick="showModal(2)">
+			</div>
+			<div class="slide">
+				<img src="img/responsive.png" class="shownIMG" onclick="showModal(3)">
+			</div>
+			<div class="slide">
+				<img src="img/javaPicSlides.png" class="shownIMG" onclick="showModal(4)">
+			</div>
+		</div>
+
+		<div class="thumbnails">
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+			<!--Fill column's from the center outwards--> 
+			<div class="row">
+				<div class="column">
+					<!--Filler column-->
+				</div>
+				<div class="column">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/title.png" onclick="currentSlide(1)" alt="Welcome!">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/raspberry.png" onclick="currentSlide(2)" alt="The raspberry-Pi I set up">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/responsive.png" onclick="currentSlide(3)" alt="Small example of the responsive web part">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/javaPicSlides.png" onclick="currentSlide(4)" alt="Code example for the (this) gallery">
+				</div>
+				<div class="column">
+				</div>
+			</div>
+		</div>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="ModalIMG">
+		</div>
+
+		<div class="ProjectText">
+			<p>	<u>About the website:</u><br>
+				In August 2020, I started working on this website by simply creating a .txt file on my desktop. 
+				Over time, the page became larger and I got a "vision" of what I wanted it to become.<br>
+				I bought a raspberry Pi computer, set it up with a dynamic dns service and got it working, 
+				until I found out that my internet provider blocked certain traffic to prevent hostings of certain servers (webservers apparently included) 
+				so that I could only reach my website via my home network...<br>
+				After quite some back and forth with my provider, I decided to drop the raspberry Pi for the moment and just rent a cheap server to set up my page. 
+				<br><br>
+				<u>About the code:</u><br>
+				I created this website on my own without help or major references. I like things simplistic and thus kept the design that way. 
+				I worked hard to make the website as responsive as possible for any resolution/screen!<br>
+				Almost everything stored on this webserver is open source and can be viewed and downloaded by everybody (I placed a download link below anyway). 
+				<br><br>
+				Special thanks to Laila for helping me with some design choices! = )
+			</p>
+			<div class="buttons">
+				<a href="files/portfolio_Web.zip" download="files/portfolio_Web.zip" target="_blank"><p>Download project</p></a>
+			</div>
+		</div>
+
+		<div class="footer">
+			<h3><br>Information</h3>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<h5>Paul Sohns<br>Germany, Lower Saxony<br>paul.sohns@web.de</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Hosted by: netcup.eu</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Feel free to contact me in case of<br>any questions, requests, etc.!</h5>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			//Manage the picture Slides
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("slide");
+				var dots = document.getElementsByClassName("demo");
+				var captionText = document.getElementById("caption");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "inline";
+				dots[slideIndex-1].className += " active";
+				captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+
+			//Show Pictures in Fullscreen when clicked
+			var modal = document.getElementById("myModal");
+			var img = document.getElementsByClassName("shownIMG");
+			var modalImg = document.getElementById("ModalIMG");
+			var span = document.getElementsByClassName("close")[0];
+
+			function showModal(n){
+				modal.style.display = "block";
+				modalImg.src = img[n-1].src;
+			}
+
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+		</script>
+	</body>
+</html>

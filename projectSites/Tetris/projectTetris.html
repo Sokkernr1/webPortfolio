@@ -1,0 +1,183 @@
+<!-- NOTES!!!!
+	Max aspect ratio for pictures: 13:20 (e.g. 1300x2000)	for favor to height
+								   theoretically unlimited	for favor to width 
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">  
+		<title>Paul Sohns - Project Tetris</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/style.css">
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="title">
+				<a href="../../index.html"><h1>Paul Sohns - Portfolio</h1></a>
+			</div>
+			<div class="links">
+				<a href="../../contact.php"><h2>Contact</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../projectList.html"><h2>My work</h2></a>
+			</div>
+			<div class="links">
+				<a href="../../aboutMe.html"><h2>About me</h2></a>
+			</div>
+		</div>
+
+		<div class="ProjectHeadline">
+			<h1><u>Project-Tetris</u></h1>
+		</div>
+
+		<!--NOTES!!!!
+			Max aspect ratio for pictures:	13:20 (e.g. 1300x2000)	in favor to height
+											theoretically unlimited	in favor to width 
+		-->
+		<div class="gallery">
+			<div class="slide">
+				<img src="img/title.png" class="shownIMG" onclick="showModal(1)">
+			</div>
+			<div class="slide">
+				<img src="img/ingame.png" class="shownIMG" onclick="showModal(2)">
+			</div>
+			<div class="slide">
+				<img src="img/highscore.png" class="shownIMG" onclick="showModal(3)">
+			</div>
+			<div class="slide">
+				<img src="img/devmode.png" class="shownIMG" onclick="showModal(4)">
+			</div>
+		</div>
+
+		<div class="thumbnails">
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+			<!--Fill column's from the center outwards--> 
+			<div class="row">
+				<div class="column">
+					<!--Filler column-->
+				</div>
+				<div class="column">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/title.png" onclick="currentSlide(1)" alt="The starting screen">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/ingame.png" onclick="currentSlide(2)" alt="The game itself">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/highscore.png" onclick="currentSlide(3)" alt="The highscore table">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="img/devmode.png" onclick="currentSlide(4)" alt="The developer mode">
+				</div>
+				<div class="column">
+				</div>
+			</div>
+		</div>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="ModalIMG">
+		</div>
+
+		<div class="ProjectText">
+			<p>	<u>About the project:</u><br>
+				This project was my final assignment in computer science at my graduating class at school and had its main emphasis on Microsoft Access (Visual Basic). 
+				We were allowed to choose a project by ourselves under the condition that our teacher approved of our choice. 
+				Since Visual Basic and Microsoft Access specifically is not a "videogame-friendly environment", 
+				I was told that my project would not be realistic to succeed at my level of experience and expertise. 
+				<br><br>
+				<u>Features:</u><br>
+				<b>-|</b> The I- (once as I and once rotated) and O-Block of Tetris (since Access does not know any shapes with 4+ corners/vertices
+				adding blocks like the T or the Z would have taken longer and I would have missed the deadline)<br>
+				<b>-|</b> Ex-/Importable highscore table with usernames<br>
+				<b>-|</b> Developer mode with the ability to pause the game, spawn certain blocks and to see console output of usefull information<br>
+				<b>-|</b> Increasing difficulty over time with a logical point system and combos
+				<br><br>
+				<u>About the code:</u><br>
+				Everything in this project is developed by myself and programmed solely within Microsoft Access in Visual Basic. 
+				I am aware that there are bugs and problems that could easily be fixed, 
+				but I do not want to alter the code for sentimental reasons as it would no longer be my first real game I ever really created by myself.<br>
+				I would love to talk about the code, but I will keep this short as you can download the entire game files below 
+				(notes are in German since this was a school project).<br>
+				The main core of the game is the 2D string array which saves every information about which field is occupied by which block. 
+				This array works similar to a coordinate system and is checked for every move of any block. 
+				Each block (when moved) disposes of a pivot position and information about its width and height. 
+				By the use of this information, every next surrounding position can easily be calculated and checked before moving.<br>
+				Whenever a block is set to be solid, a small algorithm checks which rows have been affected by the block in order to check those rows if they are occupied. 
+				If the relevant rows are occupied, every block that is inside of that row will shrink and move downwards and 
+				every block above that row will also move downwards. The program will then check, 
+				if any other block can be moved even further downwards before spawning the next block at the top of the screen. 
+				<br><br>
+			</p>
+			<div class="buttons">
+				<a href="files/TetrisGame.accdb" download="files/TetrisGame.accdb" target="_blank"><p>Download entire project</p></a>
+				<a href="files/TetrisCode.zip" download="files/TetrisCode.zip" target="_blank"><p>Download code only</p></a>
+			</div>
+		</div>
+
+		<div class="footer">
+			<h3><br>Information</h3>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<h5>Paul Sohns<br>Germany, Lower Saxony<br>paul.sohns@web.de</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Hosted by: netcup.eu</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Feel free to contact me in case of<br>any questions, requests, etc.!</h5>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			//Manage the picture Slides
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("slide");
+				var dots = document.getElementsByClassName("demo");
+				var captionText = document.getElementById("caption");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "inline";
+				dots[slideIndex-1].className += " active";
+				captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+
+			//Show Pictures in Fullscreen when clicked
+			var modal = document.getElementById("myModal");
+			var img = document.getElementsByClassName("shownIMG");
+			var modalImg = document.getElementById("ModalIMG");
+			var span = document.getElementsByClassName("close")[0];
+
+			function showModal(n){
+				modal.style.display = "block";
+				modalImg.src = img[n-1].src;
+			}
+
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+		</script>
+	</body>
+</html>
