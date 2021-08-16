@@ -29,9 +29,9 @@
 
 				// Send Mail By PHP Mail Function
 				if(mail("PaulSohns@mail144060.mx2e8a.netcup.net", $subject, $message, implode('\r\n', $headers)){
-					$_SESSION['result']="Email was send successfully!<br>I will reply as soon as I can!";
+					$_SESSION['result']="Email was send successfully!<br>I will reply as soon as I can!<br>(Replies could get marked as spam)";
 				}else{
-					$_SESSION['result']="Failed to send email...";
+					$_SESSION['result']="Error: Failed to send email...";
 				}
 			}
 			header("Location: http://www.paulsohns.com/contact.php");
