@@ -1,0 +1,171 @@
+<!-- NOTES!!!!
+	Max aspect ratio for pictures: 13:20 (e.g. 1300x2000)	for favor to height
+								   theoretically unlimited	for favor to width 
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">  
+		<title>XYZ - Online portfolio</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="title">
+				<a href="../index.html"><h1>XYZ - Portfolio</h1></a>
+			</div>
+			<div class="links">
+				<a href="../contact.php"><h2>Contact</h2></a>
+			</div>
+			<div class="links">
+				<a href="../projectList.html"><h2>My work</h2></a>
+			</div>
+			<div class="links">
+				<a href="../aboutMe.html"><h2>About me</h2></a>
+			</div>
+		</div>
+
+		<div class="ProjectHeadline">
+			<h1><u>Some cool stuff</u></h1>
+		</div>
+
+		<!--NOTES!!!!
+			Max aspect ratio for pictures:	13:20 (e.g. 1300x2000)	in favor to height
+											theoretically unlimited	in favor to width 
+		-->
+		<div class="gallery">
+			<div class="slide">
+				<img src="../img/placeholder/fish.png" class="shownIMG" onclick="showModal(1)">
+			</div>
+			<div class="slide">
+				<img src="../img/placeholder/fish2.png" class="shownIMG" onclick="showModal(2)">
+			</div>
+			<div class="slide">
+				<img src="../img/placeholder/2000x500Test.png" class="shownIMG" onclick="showModal(3)">
+			</div>
+			<div class="slide">
+				<img src="../img/placeholder/500x2000Test.png" class="shownIMG" onclick="showModal(4)">
+			</div>
+		</div>
+
+		<div class="thumbnails">
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+			<!--Fill column's from the center outwards--> 
+			<div class="row">
+				<div class="column">
+					<!--Filler column-->
+				</div>
+				<div class="column">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="../img/placeholder/fish.png" onclick="currentSlide(1)" alt="Blup_1">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="../img/placeholder/fish2.png" onclick="currentSlide(2)" alt="Blup_2">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="../img/placeholder/2000x500Test.png" onclick="currentSlide(3)" alt="2000x500px Test">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="../img/placeholder/500x2000Test.png" onclick="currentSlide(4)" alt="500x2000px Test">
+				</div>
+				<div class="column">
+				</div>
+			</div>
+		</div>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="ModalIMG">
+		</div>
+
+		<div class="ProjectText">
+			<p>	<u>About this:</u><br>
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+				sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
+				ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+				magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
+				sanctus est Lorem ipsum dolor sit amet. 
+				<br><br>
+				<u>About that:</u><br>
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+				sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
+				ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+				magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
+				sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+				labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+				no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+				<br><br>
+			</p>
+			<div class="buttons">
+				<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><p>Some button</p></a>
+				<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><p>Some other button</p></a>
+			</div>
+		</div>
+
+		<div class="footer">
+			<h3><br>Information</h3>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<h5>Text<br>TextText<br>TextTextText</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Text</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>TextText<br>TextTextText</h5>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			//Manage the picture Slides
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("slide");
+				var dots = document.getElementsByClassName("demo");
+				var captionText = document.getElementById("caption");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "inline";
+				dots[slideIndex-1].className += " active";
+				captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+
+			//Show Pictures in Fullscreen when clicked
+			var modal = document.getElementById("myModal");
+			var img = document.getElementsByClassName("shownIMG");
+			var modalImg = document.getElementById("ModalIMG");
+			var span = document.getElementsByClassName("close")[0];
+
+			function showModal(n){
+				modal.style.display = "block";
+				modalImg.src = img[n-1].src;
+			}
+
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+		</script>
+	</body>
+</html>
