@@ -2,19 +2,16 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">  
-		<title>Paul Sohns - Contact form</title>
+		<title>XYZ - Online portfolio</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="css/contact.css">
-		<link rel="stylesheet" href="css/header.css">
-		<link rel="stylesheet" href="css/footer.css">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 
 	<body>
 		<div class="header">
 			<div class="title">
-				<a href="index.html"><h1>Paul Sohns - Portfolio</h1></a>
+				<a href="index.html"><h1>XYZ - Portfolio</h1></a>
 			</div>
 			<div class="links">
 				<a href="contact.php"><h2>Contact</h2></a>
@@ -52,10 +49,10 @@
 							$result = $_SESSION['result'];
 							echo $result;
 						}else{
-							echo 'All emails are sent to: paul.sohns@web.de';
+							echo 'All emails are sent to: some@email.com';
 						}
 					}else{
-						echo 'All emails are sent to: paul.sohns@web.de';
+						echo 'All emails are sent to: some@email.com';
 					}
 					SESSION_DESTROY();
 				?>
@@ -67,13 +64,13 @@
 			<br>
 			<div class="row">
 				<div class="col-md-4">
-					<h5>Paul Sohns<br>Germany, Hamburg<br>paul.sohns@web.de</h5>
+					<h5>Text<br>TextText<br>TextTextText</h5>
 				</div>
 				<div class="col-md-4">
-					<h5>Hosted by: netcup.eu</h5>
+					<h5>Text</h5>
 				</div>
 				<div class="col-md-4">
-					<h5>Feel free to contact me in case of<br>any questions, requests, etc.!</h5>
+					<h5>TextText<br>TextTextText</h5>
 				</div>
 			</div>
 		</div>
