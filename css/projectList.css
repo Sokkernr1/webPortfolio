@@ -1,0 +1,60 @@
+.projectList {
+	background-image:linear-gradient(to right, rgba(191, 126, 205, 0), rgba(191, 126, 205, 0.3) 0% 100%, rgba(191, 126, 205, 0));
+	border-radius:5em;
+	text-align:center;
+	margin-top:150px;
+	margin-left:5%;
+	width:90%;
+	height:auto;
+	color:black;
+	padding:16px;
+	padding-bottom:50px;
+}
+
+.projectList h1 {
+	font-size:2.755em;
+}
+
+.projectList .postBoxesContainer {
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.projectList .postBoxContainer {
+	width:25%;
+	margin-left:6.25%;
+	margin-top:2.5%;
+}
+
+.projectList .postBoxesContainer .postBoxContainer .postBox {
+	border-radius:25px;
+	height:100%;
+}
+
+/*Fullscreen PC*/
+@media screen and (max-width:1465px) {
+	.projectList .postBoxContainer {
+		width:40%;
+		margin-left:calc(40% / 3%);
+	}
+}
+
+/*Medium screen*/
+@media screen and (max-width:860px) {
+	.projectList .postBoxContainer {
+		width:70%;
+		margin-left:15%;
+	}
+}
+
+/*Small screen*/
+@media screen and (max-width:457px) {
+	.projectList {
+		margin-top:225px;
+	}
+
+	.projectList .postBoxContainer {
+		width:90%;
+		margin:5% 5%;
+	}
+}
