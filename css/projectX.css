@@ -133,7 +133,6 @@
 
 .modal .close {
 	position:absolute;
-	z-index:999;
 	top:20px;
 	right:55px;
 	color:#f1f1f1;
@@ -142,8 +141,30 @@
 	transition:0.3s;
 }
 
+.modal .nextImg {
+	position:absolute;
+	top:50%;
+	right:50px;
+	color:#787878;
+	font-size:40px;
+	transition:0.3s;
+}
+
+.modal .prevImg {
+	position:absolute;
+	top:50%;
+	left:50px;
+	color:#787878;
+	font-size:40px;
+	transition:0.3s;
+}
+
 .modal .close:hover,
-.modal .close:focus {
+.modal .close:focus,
+.modal .prevImg:hover,
+.modal .prevImg:focus,
+.modal .nextImg:hover,
+.modal .nextImg:focus {
 	color:#bbb;
 	text-decoration:none;
 	cursor:pointer;

@@ -85,6 +85,8 @@
 		<!-- The Modal -->
 		<div id="myModal" class="modal">
 			<span class="close">&times;</span>
+			<span class="nextImg">&#x21AC;</span>
+			<span class="prevImg">&#x21AB;</span>
 			<img class="modal-content" id="ModalIMG">
 		</div>
 
@@ -127,47 +129,7 @@
 			</div>
 		</div>
 
-		<script>
-			//Manage the picture Slides
-			var slideIndex = 1;
-			showSlides(slideIndex);
+		<script src="../../javaScript/gallery.js"></script>
 
-			function currentSlide(n) {
-				showSlides(slideIndex = n);
-			}
-
-			function showSlides(n) {
-				var i;
-				var slides = document.getElementsByClassName("slide");
-				var dots = document.getElementsByClassName("demo");
-				var captionText = document.getElementById("caption");
-				if (n > slides.length) {slideIndex = 1}
-				if (n < 1) {slideIndex = slides.length}
-				for (i = 0; i < slides.length; i++) {
-					slides[i].style.display = "none";
-				}
-				for (i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" active", "");
-				}
-				slides[slideIndex-1].style.display = "inline";
-				dots[slideIndex-1].className += " active";
-				captionText.innerHTML = dots[slideIndex-1].alt;
-			}
-
-			//Show Pictures in Fullscreen when clicked
-			var modal = document.getElementById("myModal");
-			var img = document.getElementsByClassName("shownIMG");
-			var modalImg = document.getElementById("ModalIMG");
-			var span = document.getElementsByClassName("close")[0];
-
-			function showModal(n){
-				modal.style.display = "block";
-				modalImg.src = img[n-1].src;
-			}
-
-			span.onclick = function() {
-				modal.style.display = "none";
-			}
-		</script>
 	</body>
 </html>
