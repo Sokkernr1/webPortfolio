@@ -1,8 +1,24 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">  
-		<title>Paul Sohns - Contact form</title>
+		<title>Paul Sohns - Contact me</title>
+
+		<!--Favicon configuration-->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="img/favicons/favicon-64x64.png" sizes="64x64">
+		<link rel="apple-touch-icon" sizes="152x152" href="/favicon-152x152.png">
+		<meta name="msapplication-TileColor" content="#e6e6e6">
+		<meta name="msapplication-TileImage" content="img/favicons/favicon-144x144.png">
+
+		<!--meta tags-->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="author" content="Paul Sohns">
+		<meta name="owner" content="Paul Sohns">
+		<meta name="language" content="EN">
+		<meta name="robots" content="nofollow, noindex">
+	
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/common.css">
