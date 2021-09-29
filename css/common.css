@@ -26,6 +26,11 @@ body {
 	transition: background-color 250ms linear;
 }
 
+.postBox.forceCentered {
+	position: relative;
+	left: 55%;
+}
+
 .postBox h3, 
 .postBox h4, 
 .postBox h5,
