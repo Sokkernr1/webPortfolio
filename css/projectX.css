@@ -207,10 +207,12 @@
 
 .ProjectText a p {
 	padding:12px 18px;
-	margin-top:14px;
+	margin-top:10px;
 	width:100%;
 	margin-left:0%;
 	font-size:22px;
+	position: relative;
+	top: 4%;
 }
 
 .ProjectText .container p {
