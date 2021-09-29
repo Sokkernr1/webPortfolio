@@ -32,6 +32,7 @@
 	border-color:white;
 	border-radius:25px;
 	padding:7px 10px;
+	transition: background-color 250ms linear;
 }
 
 .header .links h2:hover {

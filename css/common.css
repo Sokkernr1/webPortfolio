@@ -23,6 +23,7 @@ body {
 	height:auto;
 	cursor:pointer;
 	padding-bottom:5px;
+	transition: background-color 250ms linear;
 }
 
 .postBox h3, 

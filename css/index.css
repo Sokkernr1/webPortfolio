@@ -15,6 +15,7 @@
 	border-radius: 5em;
 	margin-top:50px;
 	cursor:pointer;
+	transition: background-color 250ms linear;
 }
 
 .introduction p:hover {
@@ -49,6 +50,7 @@
 	letter-spacing:1px;
 	border-radius:5em;
 	cursor:pointer;
+	transition: background-color 250ms linear;
 }
 
 .findMe p:hover {
@@ -62,6 +64,7 @@
 	border:3px solid #fff;
 	border-radius:50%;
 	background-color:#f7c552;
+	transition: border 250ms linear;
 }
 
 .findMe .icon:hover{
@@ -99,6 +102,7 @@
 	letter-spacing:1px;
 	border-radius:5em;
 	cursor:pointer;
+	transition: background-color 250ms linear;
 }
 
 .showcaseProjects .postText p:hover {
